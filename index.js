@@ -17,7 +17,16 @@ class CesarCipher {
         }
 
         cipherText += String.fromCharCode(shiftedChar);
-      } else {
+      } 
+      else if(charCode>=48 && charCode<=57){
+        let shiftedChar = charCode + 3
+        if(shiftedChar > 57){
+            shiftedChar = shiftedChar - 10
+        }
+
+        cipherText += String.fromCharCode(shiftedChar);
+      }
+      else {
         cipherText += char;
       }
     }
@@ -43,7 +52,16 @@ class CesarCipher {
         }
 
         plainText += String.fromCharCode(shiftedChar);
-      } else {
+      } 
+      else if(charCode>=48 && charCode<=57){
+        let shiftedChar = charCode - 3
+        if(shiftedChar < 48){
+            shiftedChar = shiftedChar + 10
+        }
+
+        plainText += String.fromCharCode(shiftedChar);
+      }
+      else {
         plainText += char;
       }
     }
@@ -62,20 +80,15 @@ function onSelect(type) {
     document.getElementById("h-enc").style.color = "#f90";
     document.getElementById("h-dec").style.color = "black";
     document.getElementById("res-label").innerHTML = "Cypher Text";
-
-    
-
-  } else if ((type == "Decode")) {
+  } else if (type == "Decode") {
     document.getElementById("label").innerHTML = "Cypher Text";
     document.getElementById("h-enc").style.color = "black";
     document.getElementById("h-dec").style.color = "#f90";
     document.getElementById("res-label").innerHTML = "Plain Text";
- 
-   
   }
 
-  document.getElementById("input").value = "";  
-  document.getElementById("result").value = ""
+  document.getElementById("input").value = "";
+  document.getElementById("result").value = "";
 }
 
 function EndCoding(inputValue) {
