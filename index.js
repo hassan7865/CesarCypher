@@ -70,6 +70,7 @@ class CesarCipher {
   }
 }
 
+
 let selectType;
 
 function onSelect(type) {
@@ -79,9 +80,9 @@ function onSelect(type) {
     document.getElementById("label").innerHTML = "Plain Text";
     document.getElementById("h-enc").style.color = "#f90";
     document.getElementById("h-dec").style.color = "black";
-    document.getElementById("res-label").innerHTML = "Cypher Text";
+    document.getElementById("res-label").innerHTML = "Cipher Text";
   } else if (type == "Decode") {
-    document.getElementById("label").innerHTML = "Cypher Text";
+    document.getElementById("label").innerHTML = "Cipher Text";
     document.getElementById("h-enc").style.color = "black";
     document.getElementById("h-dec").style.color = "#f90";
     document.getElementById("res-label").innerHTML = "Plain Text";
@@ -109,7 +110,7 @@ function onSubmit() {
     EndCoding(inputValue);
   } else {
     alert(
-      `Please enter ${selectType == "Encode" ? "Plain Text" : "Cypher Text"}`
+      `Please enter ${selectType == "Encode" ? "Plain Text" : "Cipher Text"}`
     );
   }
 }
